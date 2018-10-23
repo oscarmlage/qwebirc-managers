@@ -76,7 +76,8 @@ qwebirc.ui.QUI = new Class({
     for(var i=2000;i<15000;i+=500)
       this.reflow.delay(i);
 
-    this.setSideTabs(this.uiOptions.SIDE_TABS);
+    /* this.setSideTabs(this.uiOptions.SIDE_TABS); */
+    this.setSideTabs(true);
 
   },
   newWindow: function(client, type, name) {
