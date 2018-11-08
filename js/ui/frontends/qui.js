@@ -705,19 +705,20 @@ qwebirc.ui.QUI.Window = new Class({
   },
   setHilighted: function(state) {
     var laststate = this.hilighted;
-    
+
     this.parent(state);
 
     if(state == laststate)
       return;
-      
+
     this.tab.removeClass("tab-hilight-activity");
     this.tab.removeClass("tab-hilight-us");
     this.tab.removeClass("tab-hilight-speech");
-    
+
     switch(this.hilighted) {
       case qwebirc.ui.HILIGHT_US:
         this.tab.addClass("tab-hilight-us");
+        this.tab.parentElement.insertBefore(this.tab, this.tab.parentElement.firstChild.nextSibling);
         break;
       case qwebirc.ui.HILIGHT_SPEECH:
         this.tab.addClass("tab-hilight-speech");
